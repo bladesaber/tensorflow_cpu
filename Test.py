@@ -1,4 +1,11 @@
-import random
+from keras.models import Sequential
+from keras import layers
+import numpy
 
-a = [[10,[1,2]],[5,[2,4]],[20,[1,2]],[40,[3,3]]]
-print(sorted(a,reverse=True)[:1])
+model = Sequential()
+model.add(layers.TimeDistributed(layers.Dense(4), input_shape=(None, 2)))
+model.summary()
+
+data = numpy.reshape([1,2,1,2],(1,2,2))
+result = model.predict(data)
+print(result)

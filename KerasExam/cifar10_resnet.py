@@ -1,4 +1,3 @@
-
 import keras
 from keras.layers import Dense,Conv2D,BatchNormalization,Activation,Input,MaxPooling2D,Flatten,AveragePooling2D
 from keras.models import Model
@@ -72,6 +71,7 @@ def origin_resnet_block(inputs,num_filter,input_resize):
                      activation=None)
 
     if input_resize:
+        # 第一层对维度修正才能 layer.add
         x = resnet_layer(inputs=inputs,
                          num_filter=num_filter,
                          kernel_size=1,

@@ -169,5 +169,5 @@ def figure6_3():
     plt.ylabel('RMS error')
     plt.legend()
 
-figure6_3()
+figure6_2()
 plt.show()
